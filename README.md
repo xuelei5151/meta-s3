@@ -1,16 +1,16 @@
-meta-bitmainer
+meta-s3
 =============
 
-OpenEmbedded / Ångström meta layer for KnCMiner
+OpenEmbedded / Ångström meta layer for Miner
 
 Setup instructoins
 ------------------
 
-To build a KnCMiner firmware, first prepare a build machine as per OpenEmbedded Required software instructions at http://www.openembedded.org/wiki/Getting_started
+To build a firmware, first prepare a build machine as per OpenEmbedded Required software instructions at http://www.openembedded.org/wiki/Getting_started
 
-When machine is prepared proceed to prepare the KnCMiner firmware build by running
+When machine is prepared proceed to prepare the firmware build by running
 
-    git clone https://github.com/KnCMiner/setup-scripts.git
+    git clone https://github.com/Miner/setup-scripts.git
     cd setup-scripts
     MACHINE=beaglebone ./oebb.sh configure beaglebone
 
