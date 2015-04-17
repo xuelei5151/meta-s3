@@ -12,7 +12,6 @@ IMAGE_INSTALL = " \
 	screen \
 	dropbear \
 	libcurl \
-	cgminer \
 	lighttpd \
 	dtc \
 	stunnel \
@@ -28,6 +27,7 @@ IMAGE_INSTALL = " \
 	netbase \
 	avahi \
 	led-blink \
+	cgminer \
 	bitmain-spi-s3 \
 	bitmain-lcd \
 "
@@ -38,7 +38,7 @@ inherit image
 
 do_rootfs_append() {
 	echo "do_build_append"
-	cp -rf /home/xxl/AM335x/knc/setup-s3/deploy/eglibc/images/beaglebone/Angstrom-S3-eglibc-ipk-v2013.06-beaglebone.rootfs.cpio.gz.u-boot /tftpboot/initramfs.bin
-	cp -rf /home/xxl/AM335x/knc/setup-s3/deploy/eglibc/images/beaglebone/Angstrom-S3-eglibc-ipk-v2013.06-beaglebone.rootfs.cpio.gz.u-boot /tftpboot/initramfs.bin.SD
+	#cp -rf /home/xxl/AM335x/knc/setup-s3/deploy/eglibc/images/beaglebone/Angstrom-S3-eglibc-ipk-v2013.06-beaglebone.rootfs.cpio.gz.u-boot /tftpboot/initramfs.bin
+	#cp -rf /home/xxl/AM335x/knc/setup-s3/deploy/eglibc/images/beaglebone/Angstrom-S3-eglibc-ipk-v2013.06-beaglebone.rootfs.cpio.gz.u-boot /tftpboot/initramfs.bin.SD
 }
 

@@ -49,7 +49,7 @@ if [ ! -f /config/cgminer.conf ] ; then
     cp /etc/cgminer.conf.factory /config/cgminer.conf
 elif [ -z  "`cat /config/cgminer.conf | grep bitmain-voltage`" ] ; then
     rm -rf /config/cgminer.conf                                        
-	cp -rf /etc/cgminer.conf.factory /config/cgminer.conf 
+    cp -rf /etc/cgminer.conf.factory /config/cgminer.conf 
 fi
 ###########################
 
@@ -71,3 +71,21 @@ else
     ln -s /config/shadow /etc/shadow
 fi
 ###########################
+
+#miner monitor
+if [ ! -f /config/minermonitor.conf ] ; then
+    cp /etc/minermonitor.conf.factory /config/minermonitor.conf
+fi
+##########################################
+
+#user setting
+if [ ! -f /config/user_setting ] ; then
+    cp /etc/user_setting.factory /config/user_setting
+fi
+##########################################
+
+#minerlink
+if [ ! -d /config/dataformatconfig ]; then
+   cp -rf /etc/dataformatconfig /config/
+fi
+#####################################################

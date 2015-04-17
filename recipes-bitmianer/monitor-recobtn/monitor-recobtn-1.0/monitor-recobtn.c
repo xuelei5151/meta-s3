@@ -82,11 +82,13 @@ int main(int argc, char **argv)
 					printf("recovery button off over 3S, wait push on\n");
 					while(get_gpio(pRreco) == false)
 					{
+						system("echo high >/sys/class/gpio/gpio20/direction");
 						rg_on();
 						sleep(1);
 						rg_off();
 						sleep(1);
 					}
+					system("echo low >/sys/class/gpio/gpio20/direction");
 					printf("recovery button on\n");
 					pid_t pid = fork();
 					if ( pid < 0) /* Èç¹û³ö´í */

@@ -1,22 +1,22 @@
-meta-s3
+meta-bitmainer
 =============
 
-OpenEmbedded / Ångström meta layer for Miner
+OpenEmbedded / Ångström meta layer for bitminer Miner
 
 Setup instructoins
 ------------------
 
-To build a firmware, first prepare a build machine as per OpenEmbedded Required software instructions at http://www.openembedded.org/wiki/Getting_started
+To build a bitmainer miner firmware, first prepare a build machine as per OpenEmbedded Required software instructions at http://www.openembedded.org/wiki/Getting_started
 
-When machine is prepared proceed to prepare the firmware build by running
+When machine is prepared proceed to prepare the bitmainer firmware build by running
 
-    git clone https://github.com/Miner/setup-scripts.git
+    git clone https://github.com/bitmainer/setup-scripts.git
     cd setup-scripts
     MACHINE=beaglebone ./oebb.sh configure beaglebone
 
 Rootfs build instructions
 ----------------------------------
-  
+
 To build the firmware rootfs run
 
     . environment-angstrom-v2013.06

@@ -9,7 +9,7 @@ while true; do
 		/etc/init.d/cgminer.sh restart
 	else
 		if [ "$check_inter" == "20s" ]; then
-			check_inter="3m"
+			check_inter="5m"
 			continue
 		fi
 		A=`cat /tmp/cm.log`

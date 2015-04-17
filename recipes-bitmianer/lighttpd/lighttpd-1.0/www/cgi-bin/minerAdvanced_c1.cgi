@@ -217,12 +217,12 @@ jQuery(document).ready(function() {
 								    <option value="15:268.75:1506">268.75M</option>    						
     								<option value="15:262.5:0a02">262.5M</option> 
 								    <option value="16:256.25:1406">256.25M</option>    						
-    								<option value="16:250:0982">250M</option>    								
+    								<option value="16:250:0982">250M (default)</option>    								
     								<option value="17:243.75:1306">243.75M</option>
     								<option value="17:237.5:1286">237.5M</option>
     								<option value="18:231.25:1206">231.25M</option>
     								<option value="18:225:0882">225M</option>
-    								<option value="19:218.75:1106">218.75M (default)</option>
+    								<option value="19:218.75:1106">218.75M</option>
     								<option value="19:212.5:1086">212.5M</option>
     								<option value="20:206.25:1006">206.25M</option>
     								<option value="20:200:0782">200M</option>    								

@@ -6,13 +6,13 @@
 "pass" : "123"
 },
 {
-"url" : "p2p.antpool.com:25",
+"url" : "p2p.antpool.com:3333",
 "user" : "antminer",
 "pass" : "123"
 },
 {
-"url" : "50.31.149.57:3333",
-"user" : "antminer",
+"url" : "stratum+tcp://stratum.f2pool.com:3333",
+"user" : "ant.1",
 "pass" : "123"
 }
 ]
@@ -20,6 +20,6 @@
 "api-listen" : true,
 "api-network" : true,
 "api-allow" : "W:0/0",
-"bitmain-freq" : "7:200:0782",
+"bitmain-freq" : "3:350:0d82",
 "bitmain-voltage" : "0725"
 }

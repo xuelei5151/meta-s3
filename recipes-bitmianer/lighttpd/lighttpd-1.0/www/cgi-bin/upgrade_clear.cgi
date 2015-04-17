@@ -61,7 +61,7 @@ else
 		if [ -e uImage.bin ]; then
 			echo "flash kernel"
 			flash_eraseall /dev/mtd7 2>/dev/null
-			nandwrite -p /dev/mtd7 uImage 2>/dev/null
+			nandwrite -p /dev/mtd7 uImage.bin 2>/dev/null
 		fi
 	fi
 fi

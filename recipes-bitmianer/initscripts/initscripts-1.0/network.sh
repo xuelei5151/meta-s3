@@ -30,6 +30,8 @@ if [ -n "$hostname" ] ; then
 	hostname $hostname
 	echo $hostname > /etc/hostname
 fi
+#kill udhcpc service
+killall -9 udhcpc
 
 # Setup link 
 ip link set lo up

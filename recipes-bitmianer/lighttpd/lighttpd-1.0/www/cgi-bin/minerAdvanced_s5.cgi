@@ -28,7 +28,7 @@ cat <<'EOF'
 "api-network" : true,
 "api-allow" : "W:0/0",
 "bitmain-freq": "7:200:0782",
-"bitmain-voltage": "0725"
+"bitmain-voltage": ""
 }
 
 EOF
@@ -73,7 +73,7 @@ function f_get_miner_conf() {
 	try
 	{
 		document.getElementById("ant_freq").value=ant_data["bitmain-freq"];
-		document.getElementById("ant_voltage").value=ant_data["bitmain-voltage"];
+		
 	}
 	catch(err)
 	{
@@ -130,7 +130,7 @@ function f_submit_miner_conf() {
 	}
 
 	_ant_freq=jQuery("#ant_freq").val();
-	_ant_voltage=jQuery("#ant_voltage").val();
+	
 
 	jQuery("#cbi_apply_cgminer_fieldset").show();
 
@@ -140,7 +140,7 @@ function f_submit_miner_conf() {
 		dataType: 'json',
 		timeout: 30000,
 		cache: false,
-		data: {_ant_pool1url:_ant_pool1url, _ant_pool1user:_ant_pool1user, _ant_pool1pw:_ant_pool1pw,_ant_pool2url:_ant_pool2url, _ant_pool2user:_ant_pool2user, _ant_pool2pw:_ant_pool2pw,_ant_pool3url:_ant_pool3url, _ant_pool3user:_ant_pool3user, _ant_pool3pw:_ant_pool3pw, _ant_nobeeper:_ant_nobeeper, _ant_notempoverctrl:_ant_notempoverctrl, _ant_freq:_ant_freq, _ant_voltage:_ant_voltage},
+		data: {_ant_pool1url:_ant_pool1url, _ant_pool1user:_ant_pool1user, _ant_pool1pw:_ant_pool1pw,_ant_pool2url:_ant_pool2url, _ant_pool2user:_ant_pool2user, _ant_pool2pw:_ant_pool2pw,_ant_pool3url:_ant_pool3url, _ant_pool3user:_ant_pool3user, _ant_pool3pw:_ant_pool3pw, _ant_nobeeper:_ant_nobeeper, _ant_notempoverctrl:_ant_notempoverctrl, _ant_freq:_ant_freq},
 		success: function(data) {
 			window.location.reload();
 		},
@@ -273,13 +273,7 @@ jQuery(document).ready(function() {
     							</select>
 							</div>
 						</div>
-						<div class="cbi-value" id="cbi-cgminer-default-voltage">
-							<label class="cbi-value-title" for="cbid.cgminer.default.pool3url">Voltage</label>
-							<div class="cbi-value-field">
-								<input type="text" class="cbi-input-text" name="cbid.cgminer.default.voltage" id="ant_voltage" value="" />
-								<span style="color:red;">Modify voltage, clkick Save&Apply, and then re-power the miner.</span>
-							</div>
-						</div>
+						
 					</fieldset>
 					<br />
 				</fieldset>

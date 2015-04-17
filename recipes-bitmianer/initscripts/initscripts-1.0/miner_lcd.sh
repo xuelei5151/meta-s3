@@ -21,8 +21,8 @@ else
 fi
 fi
 
-if [ ! -f /config/usr_defined_lcd ] ; then
-	cp /etc/usr_defined_lcd.factory /config/usr_defined_lcd
+if [ ! -f /config/user_defined_lcd ] ; then
+	cp /etc/user_defined_lcd.factory /config/user_defined_lcd
 fi
 
 while true; do
@@ -74,10 +74,10 @@ while true; do
     echo "Pl:${ant_poolurl}"         >> /tmp/lcd.data
     echo "Ur:${ant_pooluser}"        >> /tmp/lcd.data
 	fi
-	if [ ! -f /config/usr_defined_lcd ] ; then
+	if [ ! -f /config/user_defined_lcd ] ; then
 		echo "AntMiner S2"			 >  /tmp/lcd.data
 	else
-		cat /config/usr_defined_lcd	 >  /tmp/lcd.data
+		echo "`cat /config/user_defined_lcd`"	 >  /tmp/lcd.data
 	fi
 	echo "${ant_ip}"             >> /tmp/lcd.data
 	echo "${ant_ghs} GH/s"       >> /tmp/lcd.data

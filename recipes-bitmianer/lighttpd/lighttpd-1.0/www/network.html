@@ -80,7 +80,51 @@ function f_submit_network_conf() {
 
 $(document).ready(function() {
 	f_get_network_info();
+	setTimeout("DHCPLoad()",1000); 
+
 });
+function DHCPLoad()
+{
+	var obj = document.getElementById("ant_conf_nettype");
+	var index = obj.selectedIndex;
+	var value = obj.options[index].value;
+	if (value == "DHCP"){
+	document.getElementById("ant_conf_ipaddress").readOnly=true;
+	document.getElementById("ant_conf_ipaddress").style.backgroundColor = "#999999";  
+	document.getElementById("ant_conf_netmask").readOnly=true;
+	document.getElementById("ant_conf_netmask").style.backgroundColor = "#999999"; 
+	document.getElementById("ant_conf_gateway").readOnly=true;
+	document.getElementById("ant_conf_gateway").style.backgroundColor = "#999999"; 
+	document.getElementById("ant_conf_dnsservers").readOnly=true;
+	document.getElementById("ant_conf_dnsservers").style.backgroundColor = "#999999"; 
+	}
+}
+
+function DHCPChange(val) 
+{
+
+	if (val=="DHCP"){
+	document.getElementById("ant_conf_ipaddress").readOnly=true;
+	document.getElementById("ant_conf_ipaddress").style.backgroundColor = "#999999"; 
+	document.getElementById("ant_conf_netmask").readOnly=true;
+	document.getElementById("ant_conf_netmask").style.backgroundColor = "#999999"; 
+	document.getElementById("ant_conf_gateway").readOnly=true;
+	document.getElementById("ant_conf_gateway").style.backgroundColor = "#999999";
+	document.getElementById("ant_conf_dnsservers").readOnly=true; 
+	document.getElementById("ant_conf_dnsservers").style.backgroundColor = "#999999"; 
+	}
+	else{
+	document.getElementById("ant_conf_ipaddress").readOnly=false;
+	document.getElementById("ant_conf_ipaddress").style.backgroundColor = "#f0f0f0"; 
+	document.getElementById("ant_conf_netmask").readOnly=false;
+	document.getElementById("ant_conf_netmask").style.backgroundColor = "#f0f0f0";
+	document.getElementById("ant_conf_gateway").readOnly=false;
+	document.getElementById("ant_conf_gateway").style.backgroundColor = "#f0f0f0";
+	document.getElementById("ant_conf_dnsservers").readOnly=false; 	
+	document.getElementById("ant_conf_dnsservers").style.backgroundColor = "#f0f0f0";
+	}
+}
+
 </script>
 <title>Ant Miner</title>
 </head>
@@ -162,7 +206,7 @@ $(document).ready(function() {
 							<div class="cbi-value" id="cbi-network-wan-proto">
 								<label class="cbi-value-title" for="cbid.network.wan.proto">Protocol</label>
 								<div class="cbi-value-field">
-									<select class="cbi-input-select" id="ant_conf_nettype" name="cbid.network.wan.proto" size="1">
+									<select class="cbi-input-select" id="ant_conf_nettype" name="cbid.network.wan.proto" size="1" onchange="DHCPChange(this.value)">
 										<option id="cbi-network-wan-proto-static" value="Static">Static</option>
 										<option id="cbi-network-wan-proto-dhcp" value="DHCP">DHCP</option>
 									</select>
@@ -194,6 +238,7 @@ $(document).ready(function() {
 									</div>
 								</div>
 							</div>
+							
 						</div>
 					</div>
 					<br />

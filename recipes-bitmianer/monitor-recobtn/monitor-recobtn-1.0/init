@@ -14,6 +14,7 @@ test -x "$DAEMON" || exit 0
 # gpio0_23 = 23 = red LED
 # gpio1_13 = 45 = green LED
 # gpio1_14  = 46 = recovery key
+# gpio0_20 = 20 = beep
 #version 000:
 # gpio2_5 = 69 = red LED
 # gpio2_2 = 66 = green LED
@@ -26,6 +27,7 @@ elif [ "1"x = "$ver"x ]; then
     red_led=23
     green_led=45
     recover=46
+    beep=20
 else
     red_led=69
     green_led=66
@@ -48,6 +50,11 @@ if [ ! -e /sys/class/gpio/gpio$red_led ]; then
 	echo $red_led > /sys/class/gpio/export
 fi	
 	echo out > /sys/class/gpio/gpio$red_led/direction
+#beep
+if [ ! -e /sys/class/gpio/gpio$beep ]; then
+	echo $beep > /sys/class/gpio/export
+fi	
+	echo out > /sys/class/gpio/gpio$beep/direction
 
 do_start() {
         start-stop-daemon -b -S -x $DAEMON -- $ARGS
